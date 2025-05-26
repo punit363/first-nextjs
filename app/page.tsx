@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getUserData = async () => {
   const response = await axios.get(
-    "https://week-13-offline.kirattechnologies.workers.dev/api/v1/user/details"
+    "http://localhost:3000/api/user"
   );
   return await response.data;
 };
