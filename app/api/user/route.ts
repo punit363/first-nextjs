@@ -1,6 +1,5 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/db";
 import { NextRequest } from "next/server";
-const client = new PrismaClient();
 
 export async function GET() {
   // Imagine your database logic here
@@ -17,7 +16,7 @@ export async function POST(req: NextRequest) {
   // const data = await fetchDataFromDB();
   const body = await req.json();
   console.log(body, "body");
-  await client.user.create({
+  await prisma.user.create({
     data: { username: body.username, password: body.password },
   });
 
