@@ -1,5 +1,5 @@
 "use client";
-import axios from "axios";
+import signin from "@/app/actions/user";
 import React, { useState } from "react";
 
 export default function SigninComponent() {
@@ -15,8 +15,7 @@ export default function SigninComponent() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: implement signin logic here
-    axios.post("http://localhost:3000/api/user", formData);
-    console.log("Sign In Data:", formData);
+    signin(formData.username, formData.password);
   };
 
   return (

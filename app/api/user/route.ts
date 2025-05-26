@@ -1,4 +1,4 @@
-import { prisma } from "@/db";
+import signin from "@/app/actions/user";
 import { NextRequest } from "next/server";
 
 export async function GET() {
@@ -15,10 +15,7 @@ export async function POST(req: NextRequest) {
   // Imagine your database logic here
   // const data = await fetchDataFromDB();
   const body = await req.json();
-  console.log(body, "body");
-  await prisma.user.create({
-    data: { username: body.username, password: body.password },
-  });
+  const response  = signin(body.username, body.password);
 
   return Response.json({
     name: "PunitPawar",
