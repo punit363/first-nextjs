@@ -1,9 +1,10 @@
 "use client";
+import axios from "axios";
 import React, { useState } from "react";
 
 export default function SigninComponent() {
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -14,6 +15,7 @@ export default function SigninComponent() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: implement signin logic here
+    axios.post("http://localhost:3000/api/user", formData);
     console.log("Sign In Data:", formData);
   };
 
@@ -23,11 +25,11 @@ export default function SigninComponent() {
         <h2 className="text-2xl font-semibold text-center mb-4">Sign In</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
-            type="email"
-            name="email"
-            value={formData.email}
+            type="username"
+            name="username"
+            value={formData.username}
             onChange={handleChange}
-            placeholder="Email"
+            placeholder="Username"
             className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
