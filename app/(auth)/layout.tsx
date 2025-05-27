@@ -1,4 +1,8 @@
-export default function ({ children }: { children: React.ReactNode }) {
+export default function AuthLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <>
       <div className={`flex justify-between items-center px-4 py-2`}>

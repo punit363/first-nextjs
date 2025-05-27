@@ -15,10 +15,11 @@ export async function POST(req: NextRequest) {
   // Imagine your database logic here
   // const data = await fetchDataFromDB();
   const body = await req.json();
-  const response  = signin(body.username, body.password);
+  const response = signin(body.username, body.password);
 
   return Response.json({
     name: "PunitPawar",
     email: "Punit@gmail.com",
+    response,
   });
 }

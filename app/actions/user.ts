@@ -10,6 +10,6 @@ export default async function signin(username: string, password: string) {
 
     return { status: 1 };
   } catch (error) {
-    return { status: 0 };
+    return { status: 0, error };
   }
 }
