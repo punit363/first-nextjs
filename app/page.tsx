@@ -2,7 +2,7 @@
 export default async function Home() {
   return (
     <div>
-      hi there
+      First React APP
     </div>
   );
 }
